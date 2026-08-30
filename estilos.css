@@ -1,0 +1,270 @@
+/* ===== REGLAS GENERALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f0f4f8;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img, video, audio {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* ===== SISTEMA DE VISIBILIDAD DE SECCIONES ===== */
+.seccion {
+    display: none;
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.seccion.visible {
+    display: block;
+    animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.enlace-menu.activo {
+    background-color: #1b6ca8;
+    font-weight: bold;
+}
+
+/* ===== CABECERA ===== */
+header {
+    background: linear-gradient(135deg, #0f4c75, #1b6ca8);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav {
+    background-color: #0b3d5f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 0;
+}
+
+nav a {
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #1b6ca8;
+}
+
+/* ===== CONTENIDO SECCIONES ===== */
+.seccion h2 {
+    color: #0f4c75;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #3282b8;
+    padding-bottom: 0.5rem;
+}
+
+.seccion h3 {
+    color: #0f4c75;
+    margin: 1.5rem 0 0.8rem 0;
+}
+
+/* ===== MULTIMEDIA ===== */
+.caja-multimedia {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    border: 2px dashed #3282b8;
+    border-radius: 8px;
+    background-color: #f8fbfe;
+}
+
+.caja-multimedia h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.nota {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.enlace-externo {
+    display: inline-block;
+    color: #1b6ca8;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 0.5rem 0;
+}
+
+.enlace-externo:hover {
+    color: #0f4c75;
+}
+
+/* ===== TARJETAS DE IDEAS ===== */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tarjeta {
+    background: linear-gradient(135deg, #e8f4fc, #d4eaf7);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid #3282b8;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== LISTA DE VENTAJAS ===== */
+.lista-ventajas {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.lista-ventajas li {
+    margin-bottom: 0.7rem;
+    padding-left: 0.5rem;
+    position: relative;
+}
+
+.lista-ventajas li::before {
+    content: "✓";
+    color: #28a745;
+    font-weight: bold;
+    position: absolute;
+    left: -1.2rem;
+}
+
+/* ===== BOTÓN WHATSAPP ===== */
+.boton-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white !important;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    transition: all 0.3s;
+}
+
+.boton-whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+/* ===== SECCIÓN INTERACTIVA ===== */
+#boton-mensaje {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1.2rem 0;
+    transition: transform 0.3s;
+}
+
+#boton-mensaje:hover {
+    transform: scale(1.05);
+}
+
+#caja-respuesta {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0f4c75;
+    margin-top: 1rem;
+    padding: 1rem;
+    min-height: 60px;
+    transition: opacity 0.15s;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: #0b3d5f;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #25D366;
+    font-weight: bold;
+}
+
+/* ===== AJUSTES PARA CELULARES ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .seccion {
+        padding: 1.5rem;
+    }
+    nav ul {
+        gap: 0.3rem;
+    }
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+    }
+}
